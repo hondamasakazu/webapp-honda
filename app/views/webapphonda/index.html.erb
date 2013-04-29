@@ -1,2 +1,16 @@
+
 <h1>Webapphonda#index</h1>
-<p>Find me in app/views/webapphonda/index.html.erb</p>
+
+<body>
+<%= form_tag "/webapphonda/index"  do %>
+
+<%= text_field_tag :id,nil ,:value => "inputText" %>
+<p></p>
+<%= label_tag :id,  "test" %>
+<p></p>
+<%= submit_tag  "self" %>
+<%= submit_tag  "redirect" %>
+<% end %>
+
+</body>
+
