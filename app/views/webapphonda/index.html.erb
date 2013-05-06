@@ -2,15 +2,15 @@
 <h1>Webapphonda#index</h1>
 
 <body>
-<%= form_tag "/webapphonda/index"  do %>
+<%= form_tag ( "{ :action => 'async_greeting'} { :remote => true }" ) do %>
 
-<%= text_field_tag :id,nil ,:value => "inputText" %>
+<%= text_field_tag :text_id,nil ,:value => "inputText" %>
 <p></p>
-<%= label_tag :id,  "test" %>
+<%= label_tag :label_id,  "test" %>
 <p></p>
 <%= submit_tag  "self" %>
 <%= submit_tag  "redirect" %>
 <% end %>
-
+<div id="result" />
 </body>
 
