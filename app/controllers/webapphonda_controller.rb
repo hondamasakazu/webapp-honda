@@ -1,18 +1,18 @@
 class WebapphondaController < ApplicationController
   def index    
-   if params[:self] =="self"
-    session[:inline] = params[:text_id] 
-    aaa()
+  # if params[:self] =="self"
+  #  session[:inline] = params[:text_id] 
+  #  aaa()
        #render :text => params[:text_id]
       #render params[:label_id] => params[:text_id] 
-    else
+ #   else
      # redirect_to :action => "http://localhost:3000/webapphonda"
-    end 
+ #   end 
   end
   
   def async_greeting
     @name = params[:text_id] 
-    #render :text => "testaaa"  
+    render   
   end
   
 end
