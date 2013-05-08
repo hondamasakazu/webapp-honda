@@ -2,7 +2,7 @@
 <h1>Webapphonda#index</h1>
 
 <body>
-<%= form_tag  "webapphonda" do %>
+<%= form_tag({  :action => "getText" , :controller => "webapphonda" }) do %>
 
 <%= text_field_tag :text_id %>
 <p></p>
