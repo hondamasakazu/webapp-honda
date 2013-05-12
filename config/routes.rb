@@ -62,5 +62,6 @@ WebappHonda0417::Application.routes.draw do
   
   match "webapphonda" , :to => "webapphonda#index" , :via => [:get] 
   match "getText" , :to => "webapphonda#getText" , :via => [:post] 
+  match "test" , :to => "webapphonda#test" , :via => [:post] 
  # matches {:action=>"getText", :controller=>"webapphonda"}
 end

@@ -3,23 +3,28 @@ class WebapphondaController < ApplicationController
   end
   
   def getText
-  @name = params[:text_id] 
-    if paramas[:dd]     
+  @name = params[:text_id]
+  
+    if params[:self] 
     render "webapphonda/index"
     else
-      test(@name)
+      sendMessage(@name)
     end
   end
   
   def recvWord
     word = params[:wordRecv]
-    test(word)
-    #redirect_to :action => "http://localhost:3000/webapphonda?wordRecv=" + word
+    sendMessage(word)
   end
   
  private 
- def  test(param) 
- redirect_to :action => "http://localhost:3000/webapphonda?wordRecv=" + param
+ def  sendMessage(param) 
+ redirect_to :action => "http://localhost:3000/webapphonda/test?wordRecv=" + param
+ end
+ 
+ def test
+   @word = params[:wordRecv]
+   render "webapphonda/index"    
  end
   
 end
