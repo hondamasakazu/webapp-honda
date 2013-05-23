@@ -1,4 +1,7 @@
 
-local : "https://www.google.co.jp"
 
-sisrv : "http://www.agile.ruby.jp/asayama/recvWord"
+development:
+  url: "https://192.168.0.38:3000/webappasayama/recvWord"
+
+production:
+  url: "http://www.agile.ruby.jp/asayama/recvWord"

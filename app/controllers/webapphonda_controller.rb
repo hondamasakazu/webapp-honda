@@ -1,31 +1,34 @@
+require "yaml"
+
+
 class WebapphondaController < ApplicationController
   def index    
   end
   
   def getText
   @name = params[:text_id]
+  file = YAML.load_file("#{Rails.root}/config/redirecturl.yml")
   
     if params[:self] 
     render "webapphonda/index"
     else
       sendMessage(@name)
-       #redirect_to "https://www.google.co.jp?wordRecv="  + ERB::Util.url_encode("'"+ @name +"'")
     end
   end
   
   def recvWord
-    word = params[:wordRecv]
-    #redirect_to "https://www.google.co.jp?wordRecv="  + ERB::Util.url_encode("'"+ @name +"'")
-    #redirect_to 'http://www.google.co.jp?wordRecv=' + word
+    word = params[:wordRecv] 
     sendMessage(word)
   end
   
  private 
  def  sendMessage(param)  
- #redirect_to 'http://192.168.0.43:3000/recvWord?wordRecv=' + param
- #redirect_to "https://www.google.co.jp?wordRecv="  + ERB::Util.url_encode("'"+ param +"'")
- file = YAML.load_file("#{Rails.root}/config/redirecturl.yml")
- data = file["sisrv"]
+ 
+ 
+ fileyml = YAML.load_file("#{Rails.root}/config/redirecturl.yml")
+ #fileyml = YAML.load_file("#{Rails.root}/config/database.yml")
+ file = fileyml[Rails.env]
+ data = file["url"]
  
  redirect_to data + "?wordRecv=" + ERB::Util.url_encode(param)
 
