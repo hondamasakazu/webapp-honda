@@ -46,7 +46,7 @@ WebappHonda0417::Application.configure do
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
   #config.action_controller.asset_host = "http://assets.example.com"
  #config.action_controller.asset_host = "http://xxxxxxxxxxxx.cloudfront.net JAVAScriptの指定用  hostsの内容を記入"
- config.action_controller.asset_host = "http://192.168.0.123:3000/recvWord"
+ config.action_controller.asset_host = "http://www.agile.ruby.jp/honda/"
  
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   # config.assets.precompile += %w( search.js )
